@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=dminus-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="Assets/CSS/all.min.css">
+    <link rel="stylesheet" href="Assets/CSS/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="calculator-body">
+            <table>
+                <input type="text" id="output-area" placeholder="0" aria-disabled="true" aria-readonly="true">
+                    <td><button class="symbol c"  onclick="clearAll()">C</button></td>
+                    <td><button class="symbol"  onclick="square()"><i class="fa-solid fa-square-root-variable"></i></button></td>
+                    <td><button class="symbol"  onclick="del()"><i class="fa-solid fa-delete-left"></i></button></td>
+                    <td><button class="symbol"  onclick="Addition('%')">%</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="Addition('1')">1</button></td>
+                    <td><button onclick="Addition('2')">2</button></td>
+                    <td><button onclick="Addition('3')">3</button></td>
+                    <td><button class="symbol"  onclick="Addition('+')">+</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="Addition('4')">4</button></td>
+                    <td><button onclick="Addition('5')">5</button></td>
+                    <td><button onclick="Addition('6')">6</button></td>
+                    <td><button class="symbol"  onclick="Addition('-')">-</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="Addition('7')">7</button></td>
+                    <td><button onclick="Addition('8')">8</button></td>
+                    <td><button onclick="Addition('9')">9</button></td>
+                    <td><button class="symbol"  onclick="Addition('*')">*</button></td>
+                </tr>
+                <tr>
+                    <td><button class="symbol" onclick="Addition('.')">.</button></td>
+                    <td><button onclick="Addition('0')">0</button></td>
+                    <td><button class="symbol equal" onclick="Calculate('=')">=</button></td>
+                    <td><button class="symbol"  onclick="Addition('/')">/</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        let output_area = document.getElementById('output-area');
+        function clearAll(){
+            output_area.value = "";
+        }
+        function Addition(newValue){
+            output_area.value += newValue;
+        }
+        function square (){
+            output_area.value = Math.sqrt(output_area.value);
+        }
+        function del (){
+            output_area.value = output_area.value.slice(0, -1);
+        }
+        function Calculate(){
+            let userInput = output_area.value;
+            let theCalculator = eval(userInput);
+            output_area.value = theCalculator;
+        }
+    </script>
+</body>
+</html>

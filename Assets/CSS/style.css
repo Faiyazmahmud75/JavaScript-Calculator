@@ -55,7 +55,6 @@
     width: 40px;
     height: 45px;
     border-radius: 25%  25% 0;
-    border: none;
     outline: none;
     font-size: 20px;
     font-weight: bold;
@@ -71,12 +70,18 @@
     background-color: #00000000;
     color: #00cdba;
 }
+i.fa-solid.fa-circle {
+    font-size: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .calculator-body table button:hover {
-    background: #4646468c;
+    background: #2424248c;
     color: white;
-    transition: ease-out 0.3s;
+    transition: ease-in 0.2s;
     transform: scale(.9);
-    font-size: 30px;
+    font-size: 25px;
 }
 button.c:hover {
     background-color: #00000000 !important;

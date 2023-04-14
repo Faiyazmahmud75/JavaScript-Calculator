@@ -13,7 +13,7 @@
         <div class="calculator-body">
             <table>
                 <div class="input-field">
-                <input type="text" id="output-area" placeholder="0">
+                <textarea name="" id="output-area" placeholder="0"></textarea>
             </div>
                     <td><button class="symbol c"  onclick="clearAll()">C</button></td>
                     <td><button class="symbol"  onclick="square()"><i class="fa-solid fa-square-root-variable"></i></button></td>
@@ -21,9 +21,9 @@
                     <td><button class="symbol"  onclick="Addition('%')"><i class="fa-solid fa-percent"></i></button></td>
                 </tr>
                 <tr>
-                    <td><button onclick="Addition('7')">7</button></td>
-                    <td><button onclick="Addition('8')">8</button></td>
-                    <td><button onclick="Addition('9')">9</button></td>
+                    <td><button onclick="Addition('1')">1</button></td>
+                    <td><button onclick="Addition('2')">2</button></td>
+                    <td><button onclick="Addition('3')">3</button></td>
                     <td><button class="symbol"  onclick="Addition('+')"><i class="fa-solid fa-plus"></i></button></td>
                 </tr>
                 <tr>
@@ -33,9 +33,9 @@
                     <td><button class="symbol"  onclick="Addition('-')"><i class="fa-solid fa-minus"></i></button></td>
                 </tr>
                 <tr>
-                    <td><button onclick="Addition('1')">1</button></td>
-                    <td><button onclick="Addition('2')">2</button></td>
-                    <td><button onclick="Addition('3')">3</button></td>
+                    <td><button onclick="Addition('7')">7</button></td>
+                    <td><button onclick="Addition('8')">8</button></td>
+                    <td><button onclick="Addition('9')">9</button></td>
                     <td><button class="symbol"  onclick="Addition('*')"><i class="fa-solid fa-xmark"></i></button></td>
                 </tr>
                 <tr>
@@ -50,17 +50,43 @@
 
     <script>
         let output_area = document.getElementById('output-area');
+        output_area.maxLength = 25;
+
         function clearAll(){
             output_area.value = "";
+            output_area.style.fontSize = '40px';
         }
         function Addition(newValue){
+            if (output_area.value.length <= output_area.maxLength) {
             output_area.value += newValue;
+        } else {
+            alert("Maximum capacity reached!");
         }
+        disableOnOverflow(output_area);
+        lineBreak();
+}
+
+        function disableOnOverflow(textarea) {
+          if (textarea.scrollHeight > textarea.offsetHeight) {
+             textarea.disabled = true;
+             alert("Maximum capacity reached!");
+  }      else {
+            textarea.disabled = false;
+  }
+  
+}        function lineBreak (){
+        if (output_area.value.length > 7) {
+            output_area.style.fontSize = "25px";
+  }     else {
+            output_area.style.fontSize = "40px";
+  }
+}
         function square (){
             output_area.value = Math.sqrt(output_area.value);
         }
         function del (){
             output_area.value = output_area.value.slice(0, -1);
+
         }
         function Calculate(){
             let userInput = output_area.value;

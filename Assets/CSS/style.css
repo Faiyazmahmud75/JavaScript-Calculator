@@ -97,6 +97,6 @@ button.symbol.equal:hover {
 }
 @media (max-width: 500px){
     .calculator-body textarea{
-        width: 225px;
+        width: 235px;
     }
 }

@@ -96,7 +96,15 @@ button.symbol.equal:hover {
     background: transparent;
 }
 @media (max-width: 750px){
-    .calculator-body textarea{
+    .calculator-body{
         width: 250px;
     }
+    .input-field {
+        width: 90%;
+        margin: auto;
+}
+    .calculator-body textarea{
+        width: 225px;
+    }
+    
 }

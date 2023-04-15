@@ -95,3 +95,8 @@ button.symbol.equal:hover {
     color: #009700;
     background: transparent;
 }
+@media (max-width: 500px){
+    .calculator-body textarea{
+        width: 225px;
+    }
+}

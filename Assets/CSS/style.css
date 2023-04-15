@@ -102,9 +102,10 @@ button.symbol.equal:hover {
     .input-field {
         width: 90%;
         margin: auto;
+        margin-bottom: 50px;
 }
     .calculator-body textarea{
-        width: 225px;
+        width: 100%;
     }
     
 }
